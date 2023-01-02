@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    public Vector3 jumpVelocity;
     public Vector3 velocity;
     private bool walk, walk_left, walk_right, jump;
 
@@ -36,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
                 scale.x = 1;
 
             }
+        }
+        if(jump){
+            pos.y += jumpVelocity.y * Time.deltaTime;
         }
 
         transform.localPosition = pos;
